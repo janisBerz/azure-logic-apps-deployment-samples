@@ -77,7 +77,7 @@ stages:
     - task: AzureFunctionApp@1
       name: DeployFunctionApp
       inputs:
-        azureSubscription: 'Azure Samples Subscription'
+        azureSubscription: 'DevTest'
         appType: 'functionApp'
         appName: $(functionAppName)
         package: '$(Pipeline.Workspace)/**/$(Build.BuildId).zip'
@@ -90,7 +90,7 @@ stages:
     - task: AzurePowerShell@4
       name: DeployLogicAppSample
       inputs:
-        azureSubscription: 'Azure Samples Subscription'
+        azureSubscription: 'DevTest'
         ScriptType: 'FilePath'
         ScriptPath: '$(logicAppDeployScript)'
         FailOnStandardError: true
